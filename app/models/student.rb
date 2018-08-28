@@ -23,6 +23,7 @@ class Student < ActiveRecord::Base
     s = Student.find_by(:name => input)
     matches = []
     Student.all.each do |student|
+      binding.pry
       if !student.name.scan(/#{input}/i).first.empty?
         matches << student
       end
