@@ -18,16 +18,17 @@ class Student < ActiveRecord::Base
     if input.empty?
       Student.all
     else
+      matches = []
+      Student.all.each do |student|
+        binding.pry
+        if !student.name.scan(/#{input}/i).first.empty?
+          matches << student
+        end
+      end
 
     end
-    s = Student.find_by(:name => input)
-    matches = []
-    Student.all.each do |student|
-      binding.pry
-      if !student.name.scan(/#{input}/i).first.empty?
-        matches << student
-      end
-    end
+
+
 
     binding.pry
     matches
