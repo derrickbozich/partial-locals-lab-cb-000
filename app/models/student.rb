@@ -20,12 +20,12 @@ class Student < ActiveRecord::Base
     else
       matches = []
       Student.all.each do |student|
-
+        binding.pry
         if student.name.scan(/#{input}/i).first.length != 0
           matches << student
         end
       end
-      binding.pry
+
       matches
     end
 
