@@ -10,7 +10,6 @@
 
 
 <% @students.each do |student| %>
-  <% binding.pry %>
-  <%= render partial: 'student', locals: {student: student} %>
+
   <%= render partial: 'student', locals: {student: student} %>
 <% end %>
