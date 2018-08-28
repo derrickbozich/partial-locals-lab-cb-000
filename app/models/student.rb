@@ -22,7 +22,7 @@ class Student < ActiveRecord::Base
       Student.all.each do |student|
 
         s = student.name.scan(/#{input}/i).first
-        binding.pry
+      
         if s != nil
           matches << student
         end
