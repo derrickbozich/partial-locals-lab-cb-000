@@ -15,6 +15,11 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(input)
+    if input.empty?
+      Student.all
+    else
+      
+    end
     # Student.all.tap do |student|
     #   input.match(student.name)
     # end
