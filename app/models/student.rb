@@ -26,9 +26,6 @@ class Student < ActiveRecord::Base
       if !student.name.scan(/#{input}/i).first.empty?
         matches << student
       end
-      
-
-
     end
 
     binding.pry
