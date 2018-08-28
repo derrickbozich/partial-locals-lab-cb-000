@@ -1,10 +1,8 @@
-<%= form_for @students do |f|%>
 
-<p>
-  <%= f.label :search %>
-  <%= f.text_field :search %>
-</p>
-  <%= f.submit %>
+
+<%= form_tag students_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
 <% end %>
-
-
