@@ -21,17 +21,17 @@ class Student < ActiveRecord::Base
       matches = []
       Student.all.each do |student|
         binding.pry
-        if !student.name.scan(/#{input}/i).first.empty?
+        if student.name.scan(/#{input}/i)
           matches << student
         end
       end
-
+      matches
     end
 
 
 
     binding.pry
-    matches
+
   end
 
 
