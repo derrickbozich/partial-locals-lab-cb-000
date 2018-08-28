@@ -18,11 +18,13 @@ class Student < ActiveRecord::Base
     if input.empty?
       Student.all
     else
-      
+
     end
-    # Student.all.tap do |student|
-    #   input.match(student.name)
-    # end
+    s = Student.find_by(:name => input)
+    Student.all.tap do |student|
+      binding.pry
+      input.match(student.name)
+    end
     binding.pry
   end
 
