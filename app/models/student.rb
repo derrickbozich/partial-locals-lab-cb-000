@@ -21,11 +21,18 @@ class Student < ActiveRecord::Base
 
     end
     s = Student.find_by(:name => input)
-    Student.all.tap do |student|
-      binding.pry
-      input.match(student.name)
+    matches = []
+    Student.all.each do |student|
+      if !student.name.scan(/#{input}/i).first.empty?
+        matches << student
+      end
+      
+
+
     end
+
     binding.pry
+    matches
   end
 
 
