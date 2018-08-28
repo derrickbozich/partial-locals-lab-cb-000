@@ -15,10 +15,11 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(input)
-    Student.all.tap do |student|
-      input.match(student.name)
-    end    
+    # Student.all.tap do |student|
+    #   input.match(student.name)
+    # end
+    binding.pry
   end
 
-  
+
 end
